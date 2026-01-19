@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --osu-pink: #FF66AB;
+  --osu-purple: #7E5BEF;
+  --osu-blue: #66CCFF;
+  --osu-dark: #1a1a2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* OSU Pink Gradient Text */
+.osu-gradient-text {
+  background: linear-gradient(135deg, #FF66AB, #7E5BEF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* OSU Button Style */
+.osu-button {
+  background: linear-gradient(135deg, #FF66AB, #7E5BEF);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 102, 171, 0.4);
+}
+
+.osu-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 102, 171, 0.6);
+}
+
+/* OSU Card Style */
+.osu-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+/* Hit Circle */
+.hit-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid var(--osu-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: radial-gradient(circle, rgba(255,102,171,0.3) 0%, transparent 70%);
+  box-shadow: 0 0 20px rgba(255, 102, 171, 0.5);
+}
+
+/* Approach Circle */
+.approach-circle {
+  position: absolute;
+  border: 3px solid var(--osu-pink);
+  border-radius: 50%;
+  animation: approach 1s linear infinite;
+}
+
+@keyframes approach {
+  0% { transform: scale(3); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Combo Counter */
+.combo-counter {
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 20px rgba(255, 102, 171, 0.8);
+}
+
+/* Score Display */
+.score-display {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* Accuracy Display */
+.accuracy-display {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--osu-blue);
+}
+
+/* Rank Badge */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.rank-ss { background: linear-gradient(135deg, #FFD700, #FFA500); color: #1a1a2e; }
+.rank-s { background: linear-gradient(135deg, #FFD700, #FFCC00); color: #1a1a2e; }
+.rank-a { background: linear-gradient(135deg, #88CC00, #66AA00); color: white; }
+.rank-b { background: linear-gradient(135deg, #66CCFF, #4499DD); color: white; }
+.rank-c { background: linear-gradient(135deg, #AA66CC, #8844AA); color: white; }
+.rank-d { background: linear-gradient(135deg, #FF6666, #CC4444); color: white; }
+
+/* HP Bar */
+.hp-bar {
+  height: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.hp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF66AB, #FF3366);
+  transition: width 0.3s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FF66AB, #7E5BEF);
+  border-radius: 4px;
+}
+
+/* Beatmap Card */
+.beatmap-card {
+  background: linear-gradient(135deg, rgba(255,102,171,0.1), rgba(126,91,239,0.1));
+  border: 1px solid rgba(255, 102, 171, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.beatmap-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 102, 171, 0.6);
+  box-shadow: 0 10px 30px rgba(255, 102, 171, 0.2);
+}
+
+/* Stars Difficulty */
+.stars {
+  color: #FFCC22;
+  text-shadow: 0 0 10px rgba(255, 204, 34, 0.5);
+}
+
+/* PP Display */
+.pp-display {
+  color: #66CCFF;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(102, 204, 255, 0.5);
+}
+
+/* Gameplay Area */
+.gameplay-area {
+  background: radial-gradient(ellipse at center, rgba(30,30,50,0.9) 0%, rgba(10,10,20,0.95) 100%);
+  border: 2px solid rgba(255, 102, 171, 0.3);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gameplay-area::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF66AB' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Terminal Style */
+.terminal {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 102, 171, 0.3);
+  border-radius: 10px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+}
