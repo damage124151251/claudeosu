@@ -7,7 +7,7 @@ export function AIThoughts() {
   const [thoughts, setThoughts] = useState<AIThought[]>(mockAIThoughts);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const aiMessages = [
+  const aiMessages: { type: AIThought['type']; message: string }[] = [
     { type: 'analysis', message: 'Reading BPM pattern... 180 BPM detected' },
     { type: 'strategy', message: 'Switching to alternate tapping for streams' },
     { type: 'reaction', message: '300! Perfect hit on that jump' },
